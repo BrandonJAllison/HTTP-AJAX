@@ -1,6 +1,7 @@
 import React from 'react';
 
 const FriendsList = props => (
+    
     <div className='friendsList'>
         {props.data.map(friend => (
             <div key={friend.id}>
