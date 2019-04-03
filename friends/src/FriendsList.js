@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const FriendsList = props => (
+class FriendsList extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+
+        };
+    }
     
-    <div className='friendsList'>
-        {props.data.map(friend => (
-            <div key={friend.id}>
-                <p><span>Name:</span>{friend.name}</p>
-                <p><span>Age:</span>{friend.age}</p>
-                <p><span>Email:</span>{friend.email}</p>
+    render(){
+        return(
+            <div>
+                {this.props.data.map(friend => (
+                    <div key={friend.id}>
+                        <div><span>{friend.name}</span></div>
+                        <div><span>{friend.age}</span></div>
+                        <div><span>{friend.email}</span></div>
+                        <button onClick={() => this.props.deleteFriends(friend.id)}>Delete</button>
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-);
+        )
+    }
+
+}
 
 export default FriendsList;
 

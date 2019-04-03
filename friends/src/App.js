@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FriendsList from './FriendsList'
 import AddFriends from './AddFriends'
+import UpdateForm from './UpdateForm'
 import axios from 'axios';
 import './App.css';
 
@@ -8,7 +9,8 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      friendsList: []
+      friendsList: [],
+      
     };
   }
 
@@ -28,25 +30,49 @@ addFriendsToServer = friend => {
 
   axios
   .post('http://localhost:5000/friends', friend)
-  .then(res => {
-    console.log(res.data);
+  .then(response => {
+    console.log(response.data);
     console.log(friend);
-    this.setState({friends: res.data});
+    this.setState({friendsList: response.data});
   })
   .catch(err => {
     console.log("Error", err)
   })
-
-
 }
 
+
+deleteFriends = id => {
+  axios
+  .delete(`http://localhost:5000/friends/${id}`)
+  .then(response => {
+    this.setState({friendsList: response.data})
+  })
+  .catch(err => {
+    console.log("Error", err)
+  })
+  setTimeout(this.removeDeleteMessage, 2000);
+}
+
+updateToServer = (info, id) => {
+  axios
+  .put(`http://localhost:5000/friends/${id}`, info)
+    .then(response => {
+      this.setState({
+        friendsList: response.data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
   render() {
     return (
       <div className="App">
-        <AddFriends addFriendsToServer={this.addFriendsToServer}/>
-        <FriendsList data={this.state.friendsList} />
-        
+        <AddFriends addFriendsToServer={this.addFriendsToServer} />
+        <FriendsList data={this.state.friendsList}  deleteFriends={this.deleteFriends}/>
+        <UpdateForm updateToServer={this.updateToServer} friends={this.state.friendsList}/>
+       
       </div>
     );
   }
