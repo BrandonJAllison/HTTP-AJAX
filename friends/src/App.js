@@ -14,10 +14,12 @@ const div = {
   alignItems: 'center',
   textAlign: 'center',
   height: 'auto',
-  background: '#515457',
   color: 'white',
   
-  
+}
+
+const bkg ={
+  background: '#515457',
 }
 class App extends Component {
   constructor(){
@@ -82,7 +84,7 @@ updateToServer = (info, id) => {
 
   render() {
     return (
-      <div >
+      <div style={bkg} >
         <Header />
         <div style={div}>
         <Route path="/AddFriends" render={ (props) => {

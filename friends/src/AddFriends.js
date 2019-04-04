@@ -15,6 +15,7 @@ const input ={
     borderBottom: '2px solid #61DAFB',
     width: '200px',
     background: '#515457',
+    color: '#61DAFB'
 }
 
 const button ={
@@ -23,7 +24,7 @@ const button ={
     border: '1px solid #61DAFB',
     background: 'white',
     margin: '20px 0',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+    boxShadow: '0px 8px 15px black'
 }
 
 class AddFriends extends Component{

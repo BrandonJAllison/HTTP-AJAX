@@ -10,7 +10,7 @@ const div ={
     border: '1.5px solid #61DAFB',
     padding: '30px',
     borderRadius: '15px',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0px 2px 5px #61DAFB',
     
 }
 
@@ -20,6 +20,7 @@ const button ={
     border: '1px solid #61DAFB',
     background: '#61DAFB',
     margin: '20px 0',
+    boxShadow: '0px 8px 15px black'
     
 }
 
