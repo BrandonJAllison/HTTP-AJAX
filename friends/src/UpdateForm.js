@@ -75,7 +75,7 @@ class UpdateForm extends React.Component{
       <form style={div} onSubmit={this.handleSubmit}>
         <input style={input} type='text' name='name' required ='required' onChange={this.handleChange} value={this.state.info.name} placeholder='Name'/>
         <input style={input} type='text' name='age' required='required' onChange={this.handleChange} value={this.state.info.age} placeholder='Age'/>
-        <input style={input} type='email'   name='email' required='required' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
+        <input style={input} type='email'name='email' required='required' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
         <button style={button} type='submit'>Update</button>
       </form>
       </div>
