@@ -41,7 +41,6 @@ class AddFriends extends Component{
                     <input type="text" name="name" required='required' placeholder="name" value={this.state.friends.name} onChange={this.handleChange} />
                     <input type="text" name="age" required='required' placeholder="age" value={this.state.friends.age} onChange={this.handleChange}/>
                     <input type="text" name="email" placeholder="email" required='required' value={this.state.friends.email} onChange={this.handleChange}/>
-                    
                     <button type="submit" value="Submit" >Button</button>
                 </form>
             </div>
