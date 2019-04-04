@@ -12,17 +12,21 @@ const div = {
 const input ={
   margin: '25px 0',
   border: 'none',
-  borderBottom: '1.5px solid black',
-  width: '200px'
+  borderBottom: '2px solid #61DAFB',
+  width: '200px',
+  background: '#515457',
 }
 
 const button ={
   width: '100px',
   borderRadius: '15px',
-  border: '1px solid black',
+  border: '1px solid #61DAFB',
   background: 'white',
   margin: '20px 0',
   boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+
+    
+   
 }
 
 class UpdateForm extends React.Component{

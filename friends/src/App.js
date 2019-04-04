@@ -13,6 +13,10 @@ const div = {
   width: '100%',
   alignItems: 'center',
   textAlign: 'center',
+  height: 'auto',
+  background: '#515457',
+  color: 'white',
+  
   
 }
 class App extends Component {

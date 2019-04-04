@@ -7,20 +7,25 @@ const div ={
     margin: '25px',
     flexDirection: 'column',
     textAlign: 'left',
-    border: '1.5px solid black',
+    border: '1.5px solid #61DAFB',
     padding: '30px',
     borderRadius: '15px',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)',
     
 }
 
 const button ={
     width: '100px',
     borderRadius: '15px',
-    border: '1px solid red',
-    background: 'white',
+    border: '1px solid #61DAFB',
+    background: '#61DAFB',
     margin: '20px 0',
-    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+    
+}
+
+const link ={
+    color: '#61DAFB',
+    textDecoration: 'none'
 }
 
 class FriendsList extends Component{
@@ -40,7 +45,7 @@ class FriendsList extends Component{
                         <div><span>Age: {friend.age}</span></div>
                         <div><span>E-Mail: {friend.email}</span></div>
                         <button style={button} onClick={() => this.props.deleteFriends(friend.id)}>Delete!</button>
-                        <NavLink 
+                        <NavLink style={link}
                             to ='/UpdateForm'
                             activeClassName="active-link">
                             <span>Update Friend</span>

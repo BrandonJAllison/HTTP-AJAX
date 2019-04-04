@@ -8,12 +8,15 @@ const header = {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    color: 'white'
+    color: 'white',
+    zIndex: '2',
+    boxShadow: '0px 6px 10px #61DAFB'
     
 }
 const link ={
-    color: 'white',
+    color: '#61DAFB',
     textDecoration: 'none'
+    
 }
 
 
@@ -22,13 +25,13 @@ const Header = () => {
 return (
 
     <div style={header}>
-        <NavLink 
+        <NavLink style={link}
             to = {'/'}
             activeClassName="active-link">
-            <span style={link} >Home</span>
+            <span style={link}>Home</span>
         </NavLink>
-
-        <NavLink 
+        <span style={link}><i style={link} class="fab fa-react fa-spin fa-2x"></i>React Friends</span>
+        <NavLink style={link}
             to ='/AddFriends'
             activeClassName="active-link">
             <span style={link}>Add Friends</span>
