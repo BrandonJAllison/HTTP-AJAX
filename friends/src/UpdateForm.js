@@ -46,9 +46,9 @@ class UpdateForm extends React.Component{
   render (){
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type='text' name='name' onChange={this.handleChange} value={this.state.info.name} placeholder='Name'/>
-        <input type='text' name='age' onChange={this.handleChange} value={this.state.info.age} placeholder='Age'/>
-        <input type='text' name='email' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
+        <input type='text' name='name' required ='required' onChange={this.handleChange} value={this.state.info.name} placeholder='Name'/>
+        <input type='text' name='age' required='required' onChange={this.handleChange} value={this.state.info.age} placeholder='Age'/>
+        <input type='text' name='email' required='required' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
         <button type='submit'>Update</button>
       </form>
     );

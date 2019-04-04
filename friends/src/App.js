@@ -50,7 +50,7 @@ deleteFriends = id => {
   .catch(err => {
     console.log("Error", err)
   })
-  setTimeout(this.removeDeleteMessage, 2000);
+ 
 }
 
 updateToServer = (info, id) => {

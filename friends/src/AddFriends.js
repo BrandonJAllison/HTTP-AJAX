@@ -38,11 +38,11 @@ class AddFriends extends Component{
         return(
             <div>
                 <form onSubmit={this.addFriend}>
-                    <input type="text" name="name" placeholder="name" value={this.state.friends.name} onChange={this.handleChange} />
-                    <input type="text" name="age" placeholder="age" value={this.state.friends.age} onChange={this.handleChange}/>
-                    <input type="text" name="email" placeholder="email" value={this.state.friends.email} onChange={this.handleChange}/>
+                    <input type="text" name="name" required='required' placeholder="name" value={this.state.friends.name} onChange={this.handleChange} />
+                    <input type="text" name="age" required='required' placeholder="age" value={this.state.friends.age} onChange={this.handleChange}/>
+                    <input type="text" name="email" placeholder="email" required='required' value={this.state.friends.email} onChange={this.handleChange}/>
                     
-                    <input type="submit" value="Submit" />
+                    <button type="submit" value="Submit" >Button</button>
                 </form>
             </div>
         )
