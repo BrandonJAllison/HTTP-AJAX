@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom'
 import FriendsList from './FriendsList'
 import AddFriends from './AddFriends'
 import UpdateForm from './UpdateForm'
+import Header from './Header'
 import axios from 'axios';
 import './App.css';
 
+const div = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  alignItems: 'center',
+  textAlign: 'center',
+  
+}
 class App extends Component {
   constructor(){
     super()
@@ -36,7 +46,7 @@ addFriendsToServer = friend => {
     this.setState({friendsList: response.data});
   })
   .catch(err => {
-    console.log("Error", err)
+    console.log("You done messed up A-aron!", err)
   })
 }
 
@@ -48,7 +58,7 @@ deleteFriends = id => {
     this.setState({friendsList: response.data})
   })
   .catch(err => {
-    console.log("Error", err)
+    console.log("You done messed up A-aron!", err)
   })
  
 }
@@ -62,17 +72,26 @@ updateToServer = (info, id) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      console.log('You done messed up A-aron!', err);
     });
 };
 
   render() {
     return (
-      <div className="App">
-        <AddFriends addFriendsToServer={this.addFriendsToServer} />
-        <FriendsList data={this.state.friendsList}  deleteFriends={this.deleteFriends}/>
-        <UpdateForm updateToServer={this.updateToServer} friends={this.state.friendsList}/>
-       
+      <div >
+        <Header />
+        <div style={div}>
+        <Route path="/AddFriends" render={ (props) => {
+          return(<AddFriends {...props} addFriendsToServer={this.addFriendsToServer} />)
+        }} />
+         <Route exact path="/" render={ (props) => {
+          return(<FriendsList {...props} data={this.state.friendsList}  deleteFriends={this.deleteFriends}/>)
+        }} />
+        <Route path="/UpdateForm" render={ (props) => {
+          return(<UpdateForm {...props} updateToServer={this.updateToServer} friends={this.state.friendsList}/>)
+        }} />
+        
+        </div>
       </div>
     );
   }
