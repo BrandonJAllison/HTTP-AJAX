@@ -15,6 +15,16 @@ const input ={
   borderBottom: '1.5px solid black',
   width: '200px'
 }
+
+const button ={
+  width: '100px',
+  borderRadius: '15px',
+  border: '1px solid black',
+  background: 'white',
+  margin: '20px 0',
+  boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+}
+
 class UpdateForm extends React.Component{
   constructor(props){
     super(props);
@@ -65,8 +75,8 @@ class UpdateForm extends React.Component{
       <form style={div} onSubmit={this.handleSubmit}>
         <input style={input} type='text' name='name' required ='required' onChange={this.handleChange} value={this.state.info.name} placeholder='Name'/>
         <input style={input} type='text' name='age' required='required' onChange={this.handleChange} value={this.state.info.age} placeholder='Age'/>
-        <input style={input} type='email'  pattern=".+@globex.com" name='email' required='required' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
-        <button type='submit'>Update</button>
+        <input style={input} type='email'   name='email' required='required' onChange={this.handleChange} value={this.state.info.email} placeholder='Email'/>
+        <button style={button} type='submit'>Update</button>
       </form>
       </div>
     );

@@ -15,6 +15,16 @@ const input ={
     borderBottom: '1.5px solid black',
     width: '200px'
 }
+
+const button ={
+    width: '100px',
+    borderRadius: '15px',
+    border: '1px solid black',
+    background: 'white',
+    margin: '20px 0',
+    boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.1)'
+}
+
 class AddFriends extends Component{
     constructor(props){
         super(props);
@@ -58,8 +68,8 @@ class AddFriends extends Component{
                 <form style={div} onSubmit={this.addFriend}>
                     <input style={input} type="text" name="name" required='required' placeholder="Name" value={this.state.friends.name} onChange={this.handleChange} />
                     <input style={input} type="number" name="age" required='required' placeholder="Age" value={this.state.friends.age} onChange={this.handleChange}/>
-                    <input style={input} type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" placeholder="Email" required='required' value={this.state.friends.email} onChange={this.handleChange}/>
-                    <button type="submit" value="Submit" >Submit</button>
+                    <input style={input} type="email"  name="email" placeholder="Email" required='required' value={this.state.friends.email} onChange={this.handleChange}/>
+                    <button style={button} type="submit" value="Submit" >Submit</button>
                 </form>
             </div>
         )
